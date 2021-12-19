@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/commandsPage.css" />
+    <title>Commands | Abeda</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/c08f6c865e.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div id="brand">
+          <div id="logo"></div>
+          <div id="word-mark"></div>
+        </div>
+        <div id="menu">
+          <div id="menu-toggle">
+            <div id="menu-icon">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </div>
+          </div>
+          <ul>
+            <li><a href="https://abeda.net" target="a">Home</a></li>
+            <li><a href="https://abeda.net/discord" target="a">Discord</a></li>
+            <li>
+              <a href="https://abeda.net/commands" target="a">Commands</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Section -->
+
+    <section class="main">
+      <h1>Commands</h1>
+
+      <table class="command-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Permission Required</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a class="cmdName" href="https://abeda.net/command/hex">Hex</a></td>
+            <td>Generate or lookup a hex code.</td>
+            <td>General</td>
+            <td>None</td>
+          </tr>
+          <tr>
+            <td><a class="cmdName" href="https://abeda.net/command/ping">Ping</a></td>
+            <td>Get the bot's ping.</td>
+            <td>General</td>
+            <td>None</td>
+          </tr>
+          <tr>
+            <td><a class="cmdName" href="https://abeda.net/command/ban">Ban</a></td>
+            <td>Ban a user.</td>
+            <td>Administration</td>
+            <td>Staff Role</td>
+          </tr>
+          <tr>
+            <td><a class="cmdName" href="https://abeda.net/command/clear">Clear</a></td>
+            <td>Clear a specified amount of messages.</td>
+            <td>Administration</td>
+            <td>Staff Role</td>
+          </tr>
+          <tr>
+            <td><a class="cmdName" href="https://abeda.net/command/colorget">Color Get</a></td>
+            <td>Get the server's color.</td>
+            <td>Administration</td>
+            <td>Staff Role</td>
+          </tr>
+          <tr>
+            <td><a class="cmdName" href="https://abeda.net/command/colorprofile">Color Profile</a></td>
+            <td>Set the server's color.</td>
+            <td>Administration</td>
+            <td>Manage Server Permission</td>
+          </tr>
+          <tr>
+            <td><a class="cmdName" href="https://abeda.net/command/colorset">Color Set</a></td>
+            <td>Set the server's color.</td>
+            <td>Administration</td>
+            <td>Manage Server Permission</td>
+          </tr>
+          <tr>
+            <td><a class="cmdName" href="https://abeda.net/command/configlogs">Config Logs</a></td>
+            <td>Set the log channel for your server.</td>
+            <td>Administration</td>
+            <td>Manage Server Permission</td>
+          </tr>
+          <tr>
+            <td><a class="cmdName" href="https://abeda.net/command/configstaff">Config Staff</a></td>
+            <td>Set the staff role for your server.</td>
+            <td>Administration</td>
+            <td>Manage Server Permission</td>
+          </tr>
+          <tr>
+            <td><a class="cmdName" href="https://abeda.net/command/kick">Kick</a></td>
+            <td>Kick a user.</td>
+            <td>Administration</td>
+            <td>Staff Role</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Code -->
+
+    <script>
+      $(() => {
+        $(window).scroll(() => {
+          var windowTop = $(window).scrollTop();
+          windowTop > 100
+            ? $("nav").addClass("navShadow") &&
+              $("header").addClass("scrolled") &&
+              $("#hero-section").addClass("scrolled") &&
+              $("header").addClass("shadow") &&
+              $("ul").css("top", "100px")
+            : $("nav").removeClass("navShadow") &&
+              $("header").removeClass("scrolled") &&
+              $("#hero-section").removeClass("scrolled") &&
+              $("header").removeClass("shadow") &&
+              $("ul").css("top", "160px");
+        });
+
+        //Click Logo To Scroll To Top
+        $("#logo").on("click", () => {
+          $("html,body").animate(
+            {
+              scrollTop: 0,
+            },
+            500
+          );
+        });
+
+        //Toggle Menu
+        $("#menu-toggle").on("click", () => {
+          $("#menu-toggle").toggleClass("closeMenu");
+          $("ul").toggleClass("showMenu");
+
+          $("li").on("click", () => {
+            $("ul").removeClass("showMenu");
+            $("#menu-toggle").removeClass("closeMenu");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

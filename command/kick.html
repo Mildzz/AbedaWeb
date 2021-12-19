@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/cmdbase.css" />
+    <title>Kick | Abeda</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/c08f6c865e.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div id="brand">
+          <div id="logo"></div>
+          <div id="word-mark"></div>
+        </div>
+        <div id="menu">
+          <div id="menu-toggle">
+            <div id="menu-icon">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </div>
+          </div>
+          <ul>
+            <li><a href="https://abeda.net" target="a">Home</a></li>
+            <li><a href="https://abeda.net/discord" target="a">Discord</a></li>
+            <li>
+              <a href="https://abeda.net/commands" target="a">Commands</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div id="hero-section">
+        <div id="head-line">Kick Command</div>
+        <h4 class="category">Category: Administration</h4>
+      </div>
+    </header>
+
+    <!-- Section 1 -->
+
+    <section id="section1">
+      <!-- This is really ugly sorry -->
+      <div id="usage" style="width: 450px">
+        <img src="../assets/PlusIcon.png" class="PlusIcon" />
+        <h3>/kick</h3>
+        <div class="args" style="left: 23%">user: @Isaiah</div>
+        <div class="args" style="left: 53%">reason: Rule violation.</div>
+      </div>
+    </section>
+
+    <!-- Section 2 -->
+
+    <section id="section2">
+      <div id="heading"></div>
+      <div class="images">
+        <h2  style="position: relative; top: 135px; left: -250px;">#commands &#8205;  &#8205; <i class="fas fa-level-up-alt dwn-arrow"></i></h2>
+        <img src="../assets/Examples/Kick1.png" class="img1" />
+        <h2  style="position: relative; top: 95px; left: -175px;">#logs &#8205;  &#8205; <i class="fas fa-level-up-alt dwn-arrow"></i></h2>
+        <img src="../assets/Examples/Kick2.png" class="img2" />
+      </div>
+    </section>
+    <script>
+      $(() => {
+        $(window).scroll(() => {
+          var windowTop = $(window).scrollTop();
+          windowTop > 100
+            ? $("nav").addClass("navShadow") &&
+              $("header").addClass("scrolled") &&
+              $("#hero-section").addClass("scrolled") &&
+              $("header").addClass("shadow") &&
+              $("ul").css("top", "100px")
+            : $("nav").removeClass("navShadow") &&
+              $("header").removeClass("scrolled") &&
+              $("#hero-section").removeClass("scrolled") &&
+              $("header").removeClass("shadow") &&
+              $("ul").css("top", "160px");
+        });
+
+        //Click Logo To Scroll To Top
+        $("#logo").on("click", () => {
+          $("html,body").animate(
+            {
+              scrollTop: 0,
+            },
+            500
+          );
+        });
+
+        //Toggle Menu
+        $("#menu-toggle").on("click", () => {
+          $("#menu-toggle").toggleClass("closeMenu");
+          $("ul").toggleClass("showMenu");
+
+          $("li").on("click", () => {
+            $("ul").removeClass("showMenu");
+            $("#menu-toggle").removeClass("closeMenu");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

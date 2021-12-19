@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap");
+
+*,
+html {
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.top {
+  background: rgb(235, 51, 73);
+  background: linear-gradient(
+    90deg,
+    rgba(235, 51, 73, 1) 0%,
+    rgba(244, 92, 67, 1) 100%
+  );
+  width: 100%;
+  transition: all 0.5s ease-in-out;
+}
+
+.Abedalogo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+}
+
+.waves {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  margin-bottom: -7px; /*Fix for safari gap*/
+  min-height: 100px;
+  max-height: 150px;
+}
+
+.content {
+  position: relative;
+  height: 20vh;
+  text-align: center;
+  background-color: white;
+}
+
+/* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 17s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 20s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 23s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 30s;
+}
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+
+@media (max-width: 1250px) {
+  .Abedalogo {
+    width: 35%;
+  }
+}
+
+@media (max-width: 800px) {
+  .Abedalogo {
+    width: 55%;
+  }
+}
+
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .Abedalogo {
+    width: 65%;
+  }
+}
+
+/* Bottom */
+
+.bottom {
+  background: white;
+  position: relative;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  position: absolute;
+  left: 50%;
+  top: 75px;
+  transform: translate(-50%, -50%);
+}
+
+/* CSS */
+.btn {
+  background: linear-gradient(
+    90deg,
+    rgba(235, 51, 73, 1) 0%,
+    rgba(244, 92, 67, 1) 100%
+  );
+  border: 0;
+  border-radius: 12px;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 0.2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 200px;
+  width: 115px;
+  height: 45px;
+}
+
+.btn:not([disabled]):focus {
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5),
+    -0.125rem -0.125rem 1rem rgba(239, 71, 101, 0.5),
+    0.125rem 0.125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.btn:not([disabled]):hover {
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5),
+    -0.125rem -0.125rem 1rem rgba(239, 71, 101, 0.5),
+    0.125rem 0.125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(109, 15, 15, 0.37);
+  backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  height: inherit;
+}
+
+.card1 {
+  width: 565px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 38rem;
+}
+
+.card2 {
+  width: 565px;
+  position: relative;
+  left: 6.5%;
+  top: 3.5rem;
+}
+
+.card3 {
+  width: 565px;
+  position: relative;
+  left: 64%;
+  top: -2.8rem;
+}
+
+
+@media (max-width: 1700px) {
+  body {
+    overflow-x: hidden;
+  }
+  .card2 {
+    left: -2%;
+  }
+}
+
+@media (max-width: 1468px) {
+  body {
+    overflow-x: hidden;
+  }
+  .card2 {
+    left: 15%;
+    transform: translateX(-50% -50%);
+    top: 23.5rem;
+    width: 75%;
+  }
+
+  .card3 {
+    left: 15%;
+    transform: translateX(-50% -50%);
+    top: 29rem;
+    width: 75%;
+  }
+}
+
+@media (max-width: 726px) {
+  body {
+    overflow-x: hidden;
+  }
+  .card2 {
+    left: 0%;
+    top: 23.5rem;
+    width: 100%;
+  }
+
+  .card3 {
+    left: 0%;
+    top: 29rem;
+    width: 100%;
+  }
+}
